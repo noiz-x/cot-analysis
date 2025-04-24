@@ -89,8 +89,8 @@ def main():
     ]
     
     instrument_filter = [
-        "USD INDEX - ICE FUTURES U.S.",
-        "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+        # "USD INDEX - ICE FUTURES U.S.",
+        # "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
     ]
     
     all_records = []
@@ -106,7 +106,9 @@ def main():
         for b in blocks:
             record = parse_block(b)
             if record:
-                if record["instrument"] in instrument_filter:
+                if record["instrument"] in instrument_filter and not instrument_filter.empty():
+                    all_records.append(record)
+                else:
                     all_records.append(record)
     
     if not all_records:
