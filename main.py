@@ -32,7 +32,7 @@ def compute_cot_signal(df):
     # Calculate net positions and weekly changes for commercials
     df['net_com'] = df['commit_com_long'] - df['commit_com_short']
     df['delta_net_com'] = df['change_com_long'] - df['change_com_short']
-    df['signal'] = df['delta_net_com'].apply(lambda x: 1 if x > 0 else (-1 if x < 0 else 0))
+    df['bias'] = df['delta_net_com'].apply(lambda x: 1 if x > 0 else (-1 if x < 0 else 0))
 
     # New: calculate commercial activity and normalized bias score
     df['comm_activity'] = df['commit_com_long'] + df['commit_com_short']
@@ -49,7 +49,7 @@ def main(csv_path):
     # Select relevant columns for output
     cols = ['date',
             'instrument' if 'instrument' in df.columns else None,
-            'net_com', 'delta_net_com', 'signal', 'bias_score']
+            'net_com', 'delta_net_com', 'bias', 'bias_score']
     cols = [c for c in cols if c]
     print(df[cols].to_string(index=False))
 

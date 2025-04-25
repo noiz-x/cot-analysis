@@ -1,6 +1,6 @@
-# COT Analysis
+# COT Analysis & Signal Generator
 
-This project provides tools for analyzing Commitment of Traders (COT) data. It implements data cleaning, feature engineering, and signal generation for market sentiment analysis based on COT reports.
+This project offers an updated suite of tools for analyzing Commitment of Traders (COT) data. In addition to data parsing and cleaning, it now includes advanced bias generation for improved market sentiment analysis based on the latest COT reports.
 
 ## Requirements
 
@@ -11,19 +11,19 @@ This project provides tools for analyzing Commitment of Traders (COT) data. It i
 
 ## Usage
 
-To fetch and parse data into CSV:
+To fetch and parse the latest COT data into a CSV file:
 ```bash
 python data.py <output_csv>
 ```
 
-To generate signals from your COT data:
+To generate trading bias from your cleaned COT CSV data:
 ```bash
 python main.py <input_csv>
 ```
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on reporting issues, submitting feature requests, or contributing code.
+Contributions are welcome! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on reporting issues, submitting feature requests, or contributing improvements.
 
 ## License
 
