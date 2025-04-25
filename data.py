@@ -106,9 +106,7 @@ def main():
         for b in blocks:
             record = parse_block(b)
             if record:
-                if record["instrument"] in instrument_filter and not instrument_filter.empty():
-                    all_records.append(record)
-                else:
+                if not instrument_filter or record["instrument"] in instrument_filter:
                     all_records.append(record)
     
     if not all_records:
