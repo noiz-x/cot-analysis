@@ -84,8 +84,8 @@ def main():
     out_csv = sys.argv[1]
     
     links = [
-        "https://www.cftc.gov/dea/futures/deacmesf.htm",
-        "https://www.cftc.gov/dea/futures/deanybtsf.htm",
+        "https://www.cftc.gov/sites/default/files/files/dea/cotarchives/2025/futures/deacmesf010725.htm",
+        "https://www.cftc.gov/sites/default/files/files/dea/cotarchives/2025/futures/deanybtsf010725.htm",
     ]
     
     instrument_filter = [
@@ -121,7 +121,7 @@ def main():
         sys.exit(0)
 
     fieldnames = list(all_records[0].keys())
-    with open(out_csv, "w", newline="") as f:
+    with open(f"data/{out_csv}", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(all_records)
