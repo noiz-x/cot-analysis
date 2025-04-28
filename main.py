@@ -3,7 +3,10 @@ import pandas as pd
 
 # 1. Load and clean COT report CSV
 def load_and_clean(csv_path):
-    df = pd.read_csv(f"data/{csv_path}", parse_dates=['date'], infer_datetime_format=True)
+    df = pd.read_csv(f"data/{csv_path}")
+    # Explicitly parse 'date' column after reading
+    df['date'] = pd.to_datetime(df['date'], format='%m/%d/%y', errors='coerce')
+
     # Strip non-numeric characters from numeric fields
     num_cols = [
         'open_interest',

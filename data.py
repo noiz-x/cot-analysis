@@ -84,8 +84,8 @@ def main():
     out_csv = sys.argv[1]
     
     links = [
-        "https://www.cftc.gov/sites/default/files/files/dea/cotarchives/2025/futures/deacmesf010725.htm",
-        "https://www.cftc.gov/sites/default/files/files/dea/cotarchives/2025/futures/deanybtsf010725.htm",
+        "https://www.cftc.gov/sites/default/files/files/dea/cotarchives/2025/futures/deacmesf042225.htm",
+        "https://www.cftc.gov/sites/default/files/files/dea/cotarchives/2025/futures/deanybtsf042225.htm",
     ]
     
     instrument_filter = [
